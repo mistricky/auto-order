@@ -9,9 +9,7 @@ def print_content(msg):
     target_name = msg['User']['NickName']
     msg_text = msg['Text']
 
-    a = msg_text.encode('utf8')
-
-    if re.search('(点|订)餐结束', a):
+    if re.search('(点|订)餐结束', msg_text.encode('utf8')):
         send_msg('加一份，谢谢')
 
 def send_msg(msg):
